@@ -1,0 +1,32 @@
+<html>
+
+<head>
+   <meta charset="UTF-8" />
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up</title>
+</head>
+
+<body>
+  <form action="store.php" method="POST">
+  <div class="main">
+    <p class="sign" align="center">Sign in</p>
+    <form class="form1" action = "store.php" method = "post">
+      <div  required>
+        <select name="type" class="un" align="center">
+        <option  align="center" class="un">Employee</option>
+        <option  align="center" class="un">Candidate</option>
+        </select>
+      </div>
+      <input class="un " type="text" name = "first-name" align="center" placeholder="First-name" required>
+      <input class="un " type="text" name = "last-name" align="center" placeholder="Last-name" required>
+      <input class="un " type="text" name="email" align="center"  placeholder="Email" required>
+      <input class="pass" type="password" name="pass" align="center" placeholder="Create Password" required >
+      <input class="submit" align="center" id= "submit" type=submit  >
+      <p class="forgot" align="center"><a href="login.html">Already Registered</p>
+    </div>
+  </form>
+</body>
+
+</html>

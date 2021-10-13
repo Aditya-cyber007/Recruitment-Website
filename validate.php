@@ -1,11 +1,4 @@
-<?php 
-
-$host="localhost";
-$user="root";
-$password="";
-$db="recruitment";
-
-$conn=mysqli_connect($host,$user,$password,$db);
+<?php include "db_conn.php";
 
 if(isset($_POST['email'])){
      
@@ -22,12 +15,20 @@ if(isset($_POST['email'])){
     $sql="select * from credentials where email='".$email."'AND pass='".$password."'AND type='".$type."' limit 1";
     $result=mysqli_query($conn,$sql);
 
+    
+
     if(mysqli_num_rows($result)==1){
 
         session_start();
 
         $email=$_SESSION['email'];
-        
+        $results = mysqli_query($conn,$sql);
+
+        while ($row=$results->fetch_assoc()) {
+            $_SESSION['name']=$row['first'];
+            $_SESSION['company']=$row['company'];
+            
+        }
 
         if($type=='Employee'){
             header("Location: employee.php");
